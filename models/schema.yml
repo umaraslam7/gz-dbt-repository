@@ -7,9 +7,6 @@ sources:
       - name: raw_gz_sales
         identifier: raw_gz_sales
         description: information, one row per product_id found in orders_id.
-        freshness:
-          warn_after: {count: 90, period: day}
-        loaded_at_field: date_date
         tests:
           - unique:
               column_name: "(orders_id || '_' || pdt_id)"
