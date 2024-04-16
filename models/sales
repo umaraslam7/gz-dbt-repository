@@ -1,0 +1,8 @@
+SELECT 
+    date_date
+    , orders_id
+    , pdt_id
+    , revenue
+    , quantity
+FROM {{source('raw', 'sales')}}
+
