@@ -1,4 +1,4 @@
 {% macro margin_percent(revenue, purchase_cost, precision = 2) %}
-SAFE_DIVIDE(({{revenue}} - {{purchase_cost}}), {{revenue}}), {{precision}}
+ROUND(SAFE_DIVIDE(({{revenue}} - {{purchase_cost}}), {{revenue}}), {{precision}})
 
 {% endmacro %}
