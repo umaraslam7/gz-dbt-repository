@@ -1,0 +1,75 @@
+version: 2
+
+sources:
+  - name: gz_raw_data
+    description: raw data for finance team
+    tables:
+      - name: raw_gz_sales
+        identifier: raw_gz_sales
+        description: information, one row per product_id found in orders_id.
+        tests:
+          - unique:
+              column_name: "(orders_id || '_' || pdt_id)"
+          - not_null:
+              column_name: "(orders_id || '_' || pdt_id)"
+        columns:
+          - name: date_date
+            description: the date of purchase
+
+          - name: orders_id
+            description: id of each orders
+
+          - name: pdt_id
+            description: id of each product in each order
+
+          - name: revenue
+            description: total cost per specific product or products
+
+          - name: quantity
+            description: amount of each product in the order
+
+      - name: raw_gz_product
+        identifier: raw_gz_product
+        description: product information
+        columns:
+          - name: products_id
+            description: Primary key of the table
+            tests:
+              - unique
+              - not_null
+
+          - name: purchase_price
+            description: Cost per product
+
+      - name: raw_gz_ship
+        identifier: raw_gz_ship
+        description: shipping information
+        columns:
+          - name: orders_id
+            description: Primary key of the table
+            tests:
+              - unique
+              - not_null
+
+          - name: shipping_fee
+            description: Cost of shipping for the customer
+
+          - name: log_cost
+            description: Logistics cost for Greenweez
+
+          - name: ship_cost
+            description: Shipping cost for Greenweez
+
+models:
+    - name: int_sales_margin
+      description: sales info for each product
+
+    - name: int_orders_margin
+      description: sales data with margin calculated
+
+    - name: int_orders_operational
+      description: sales data with logisitics and shipping include
+
+    - name: finance_days
+      description: finance info
+
