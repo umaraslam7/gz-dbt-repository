@@ -130,6 +130,12 @@ models:
             - accepted_values:
                 values: ['Facebook', 'Criteo', 'Bing', 'Adwords']
 
+    - name: int_campaigns_day
+      description: all advertising campaign data aggregated per day
+
     - name: finance_days
-      description: finance info
+      description: daily financial summary
+
+    - name: finance_campaigns_day
+      description: daily financial summary including advertising margin
 
