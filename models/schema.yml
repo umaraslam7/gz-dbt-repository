@@ -139,3 +139,6 @@ models:
     - name: finance_campaigns_day
       description: daily financial summary including advertising margin
 
+
+    - name: finance_campaigns_month
+      description: daily financial summary including advertising margin
