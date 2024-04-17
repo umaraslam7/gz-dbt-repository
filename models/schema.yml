@@ -60,6 +60,39 @@ sources:
           - name: ship_cost
             description: Shipping cost for Greenweez
 
+      - name: raw_gz_adwords
+        identifier: raw_gz_adwords
+        description: adwords advertising campaign data
+
+      - name: raw_gz_bing
+        identifier: raw_gz_bing
+        description: bind advertising campaign data
+
+      - name: raw_gz_criteo
+        identifier: raw_gz_criteo
+        description: criteo advertising campaign data
+
+      - name: raw_gz_facebook
+        identifier: raw_gz_facebook
+        description: facebook advertising campaign data
+      
+      - name: stg_raw_adwords
+        identifier: stg_raw_adwords
+        description: cleaned adwords data
+
+      - name: stg_raw_bing
+        identifier: stg_raw_bing
+        description: cleaned bing data
+
+      - name: stg_raw_criteo
+        identifier: stg_raw_adwords
+        description: cleaned adwords data
+
+      - name: stg_raw_facebook
+        identifier: stg_raw_facebook
+        description: cleaned facebook data
+
+
 models:
     - name: int_sales_margin
       description: sales info for each product
