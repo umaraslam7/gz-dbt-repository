@@ -63,19 +63,37 @@ sources:
       - name: raw_gz_adwords
         identifier: raw_gz_adwords
         description: adwords advertising campaign data
+        tests:
+          - unique:
+              column_name: "(date_date || '_' || campaign_key)"
+          - not_null:
+              column_name: "(date_date || '_' || campaign_key)"
 
       - name: raw_gz_bing
         identifier: raw_gz_bing
         description: bind advertising campaign data
+        tests:
+          - unique:
+              column_name: "(date_date || '_' || campaign_key)"
+          - not_null:
+              column_name: "(date_date || '_' || campaign_key)"
 
       - name: raw_gz_criteo
         identifier: raw_gz_criteo
         description: criteo advertising campaign data
-
+        tests:
+          - unique:
+              column_name: "(date_date || '_' || campaign_key)"
+          - not_null:
+              column_name: "(date_date || '_' || campaign_key)"
       - name: raw_gz_facebook
         identifier: raw_gz_facebook
         description: facebook advertising campaign data
-      
+        tests:
+          - unique:
+              column_name: "(date_date || '_' || campaign_key)"
+          - not_null:
+              column_name: "(date_date || '_' || campaign_key)"
       - name: stg_raw_adwords
         identifier: stg_raw_adwords
         description: cleaned adwords data
@@ -102,6 +120,15 @@ models:
 
     - name: int_orders_operational
       description: sales data with logisitics and shipping include
+
+    - name: int_campaigns
+      description: all advertising campaign data collated from adwords, bing, criteo and facebook
+      columns:
+        - name: paid_source
+          description: paid advertising source
+          tests:
+            - accepted_values:
+                values: ['Facebook', 'Criteo', 'Bing', 'Adwords']
 
     - name: finance_days
       description: finance info
