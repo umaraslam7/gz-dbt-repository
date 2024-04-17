@@ -60,3 +60,24 @@ sources:
 
           - name: ship_cost
             description: Shipping cost for Greenweez
+
+
+          
+     
+
+      - name: int_sales_margin
+        identifier: int_orders_operational
+        description: sales info for each product
+
+      - name: int_orders_margin
+        identifier: int_orders_margin
+        description: sales data with margin calculated
+
+
+      - name: int_orders_operational
+        identifier: int_orders_operational
+        description: sales data with logisitics and shipping included
+
+      - name: finance_days
+        identifier: finance_days
+        description: daily finance data
